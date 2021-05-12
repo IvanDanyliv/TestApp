@@ -1,0 +1,24 @@
+header.header.w-100.bg-dark.shadow.mb-3
+  nav.navbar.navbar-expand-lg.navbar-header.transparent
+    = link_to home_path, class: 'nav-name navbar-brand'
+      | Home
+    #navbarNav.collapse.navbar-collapse.w-auto
+      ul.nav.navbar-nav.ml-auto
+        - unless current_user
+          li.nav-item
+            = link_to new_user_session_path
+              span
+                button.btn.btn-transparent.auth-btn.ml-2
+                  | Login
+          li.nav-item
+            = link_to new_user_registration_path
+              span
+                button.btn.btn-transparent.auth-btn.ml-2
+                  | Register
+        - else
+          li.nav-item
+            = link_to destroy_user_session_path, method: :delete
+              span
+                  button.btn.btn-transparent.auth-btn.ml-2
+                    | Logout
+    
