@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   %w[facebook google_oauth2].each do |adapter|
     define_method(adapter) do
