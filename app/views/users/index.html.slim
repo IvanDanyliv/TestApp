@@ -1,0 +1,17 @@
+.box
+  .all-component
+    nav.navbar.navbar-dark
+      h2.text-white
+        | Users
+    table.table
+      thead.thead
+        tr
+          th
+            span.cusom-center-in-table-example
+              | First name
+          th
+            span.cusom-center-in-table-example
+              | Last name
+      tbody
+        - @users.each do |user|
+          = render user
