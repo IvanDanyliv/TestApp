@@ -1,1 +1,5 @@
-p Hello
+- unless current_user
+  .container.d-flex.justify-content-center
+    = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=700x400&center=48.96062170325115,23.81017998329996&key=#{ENV['GOOGLE_MAP_API_KEY']}&region=UK&language=uk", alt: "Map"
+- else 
+  p Hello 

@@ -1,0 +1,12 @@
+tr
+  td
+    span.cusom-center-in-table-example
+      = user.first_name
+  td
+    span.cusom-center-in-table-example
+      = user.last_name
+  td.eye-btn.text-center
+    = link_to users_path, method: :delete, data: { confirm: "You sure?" }
+      button.btn.btn-outline-dark
+        i.fas.fa-trash
+      
