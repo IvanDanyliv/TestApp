@@ -2,6 +2,7 @@
 class User < ApplicationRecord
   acts_as_paranoid
   before_create :add_coordinates
+  before_update :add_coordinates
 
   SOCIALS = {
     facebook: 'Facebook',
