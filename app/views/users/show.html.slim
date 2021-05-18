@@ -1,0 +1,9 @@
+content.pt-4
+  .form-component
+    h1.title = @user.first_name
+  -if @user.coordinates.blank?
+    p.h1.text-center
+      | City not specified
+  -else
+    container.d-flex.justify-content-center
+      = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=700x400&markers=size:mid%7Ccolor:red%7C#{@user.coordinates[1..-2]}&key=#{ENV['GOOGLE_MAP_API_KEY']}&region=UK&language=uk", alt: "Map"  

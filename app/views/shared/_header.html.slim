@@ -17,6 +17,11 @@ header.header.w-100.bg-dark.shadow.mb-3
                   | Register
         - else
           li.nav-item
+            = link_to user_path(current_user.id)
+              span
+                button.btn.btn-transparent.auth-btn.ml-2
+                  | Info
+          li.nav-item
             = link_to destroy_user_session_path, method: :delete
               span
                   button.btn.btn-transparent.auth-btn.ml-2
