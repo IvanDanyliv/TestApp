@@ -1,0 +1,24 @@
+.container
+  .row
+    table
+      tbody
+        tr
+          h3
+            | User Details
+  .row
+    table
+      thead
+        th id
+        th First Name
+        th Last Name
+        th City
+        th Email
+      tbody
+      - @users.each do |user|
+        tr
+          td= user.id
+          td= user.first_name
+          td= user.last_name
+          td= user.city
+          td= user.email
+

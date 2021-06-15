@@ -17,6 +17,11 @@
           th
             span.cusom-center-in-table-example
               | City
+          th
+            span.cusom-center-in-table-example
+              = link_to “generate pdf”, users_path(format: :pdf)
       tbody
         - @users.each do |user|
           = render user
+    .pagination-container
+      = paginate @users, pagination_class: "pagination-md"

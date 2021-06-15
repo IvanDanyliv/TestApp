@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @ransack = User.ransack(params[:q])
-    @users = @ransack.result.page(params[:page])
+    @users = @ransack.result.page(params[:page]).per(12)
   end
 
   def show; end
