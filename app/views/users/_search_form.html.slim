@@ -1,0 +1,8 @@
+= search_form_for @ransack, url: users_path, builder: SimpleForm::FormBuilder do |f|
+  ul.nav.navbar
+    li
+      = f.text_field :first_name_or_last_name_or_city_cont, label: 'City', label: false,
+                                                                      placeholder: 'Search',
+                                                                      class: 'form-control'
+    li                                             
+      = f.button :submit, 'Search', class: 'btn btn-secondary pull-right'

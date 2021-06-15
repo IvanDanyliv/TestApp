@@ -1,5 +1,17 @@
-- unless current_user
-  .container.d-flex.justify-content-center
-    = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=700x400&center=48.96062170325115,23.81017998329996&key=#{ENV['GOOGLE_MAP_API_KEY']}&region=UK&language=uk", alt: "Map"
-- else 
-  p Hello 
+= render 'grants'
+= render 'projects'
+= render 'advert'
+= render 'news'
+= render 'connectif'
+= render 'tooltips'
+a#scroller.scroller[href="#"]
+  i.icon.icon_arrow_up
+  div
+    | на початок
+#video.modal.fade.modal_styled.modal_video.modal_centered[tabindex="-1" role="dialog" aria-labelledby="modalLabel"]
+  .modal-dialog[role="document"]
+    .modal-content
+      button.close[type="button" data-dismiss="modal" aria-label="Close"]
+        i.icon.icon_close2
+      .embed-responsive.embed-responsive-16by9
+        iframe[height="315" width="560" src="" frameborder="0" allowfullscreen=""]

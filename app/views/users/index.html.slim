@@ -1,0 +1,27 @@
+.box
+  .all-component
+    nav.navbar.navbar-dark
+      h2.text-dark
+        | Users
+      .form-row
+        = render 'search_form'
+    table.table
+      thead.thead
+        tr
+          th
+            span.cusom-center-in-table-example
+              | First name
+          th
+            span.cusom-center-in-table-example
+              | Last name
+          th
+            span.cusom-center-in-table-example
+              | City
+          th
+            span.cusom-center-in-table-example
+              = link_to “generate pdf”, users_path(format: :pdf)
+      tbody
+        - @users.each do |user|
+          = render user
+    .pagination-container
+      = paginate @users, pagination_class: "pagination-md"
