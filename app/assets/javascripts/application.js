@@ -16,3 +16,4 @@
 //= require_tree .
 //= require jquery3
 //= require outdatedbrowser
+//= require activeadmin_quill_editor
