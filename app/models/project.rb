@@ -16,4 +16,12 @@ class Project < ApplicationRecord
 
   enum status: [:development, :implemented]
   STATUSES = { development: "development", implemented: "implemented" }.freeze
+
+  scope :find_status, ->  (status) {
+    if status.blank?
+      all
+    else
+      where(status: status)
+    end
+  }
 end
