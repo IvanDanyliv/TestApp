@@ -2,6 +2,7 @@
   "name": "TestApp",
   "private": true,
   "dependencies": {
+    "activeadmin_quill_editor": "blocknotes/activeadmin_quill_editor",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.0.0",
     "eslint-plugin-vue": "^7.9.0"

@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | TestApp
+      | TepleMisto
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -26,7 +26,10 @@ html
     link[rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon120.png"]
     link[rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon180.png"]
   body
-    = render 'shared/header'
+    - if current_page?(home_path)
+      = render 'shared/home_header'
+    - else
+      = render 'shared/header'
     = yield
     = render 'shared/footer'
     #outdated

@@ -1,0 +1,16 @@
+#projects_list.container_lg
+    .project_wrap.clearfix
+      - @projects.each do |project|
+        a.project_item[href="#"]
+          span.project_item_top[style="background-image: url(img/project1.jpg);"]
+            span.item_label
+              = project.name
+            span.btn.btn_default.btn_round.btn_bordered[data-toggle="tooltip" data-placement="top" data-original-title="підтримай проект"]
+              i.icon.icon_plus
+          span.project_item_middle
+            span.project_item_title
+              = project.title
+            span.project_item_subtitle
+              = project.status
+            span.project_item_text
+              = project.short_description
