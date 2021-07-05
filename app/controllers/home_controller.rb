@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index;
-    @projects = Project.find_status(params[:f_status])
+    @projects = Project.find_status(params[:f_status]).last(5)
   end
 end

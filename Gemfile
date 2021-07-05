@@ -60,6 +60,7 @@ gem 'rubocop'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'wicked_pdf'
+gem 'will_paginate'
 gem 'wkhtmltopdf-binary'
 
 # Reduces boot times through caching; required in config/boot.rb
