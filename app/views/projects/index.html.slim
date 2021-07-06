@@ -1,12 +1,1 @@
-.section.section_project
-  .container
-    .row
-      .col-sm-4
-        h3.title_bold
-          |  проекти 
-      .col-sm-8
-        .btn-group.btn-group_styled
-          = link_to  "Всі", projects_path, class: 'btn', remote: true
-          = link_to  "В розробці", projects_path(f_status: 'development'), class: 'btn', remote: true
-          = link_to  "Реалізовані", projects_path(f_status: 'implemented'), class: 'btn', remote: true
-  = render 'projects' 
+= render 'menu' 

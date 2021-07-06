@@ -1,1 +1,5 @@
 $('#projects_list').html("<%= escape_javascript render(:partial => 'projects/projects') %>");
+
+<% if @projects.length < session[:count_projects]%>
+  $('#more_projects').addClass('disabled');
+<% end %>
