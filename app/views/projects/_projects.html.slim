@@ -2,7 +2,7 @@
   .project_wrap.clearfix
     - @projects.each do |project|
       a.project_item[href="#"]
-        span.project_item_top[style="background-image: url(img/project1.jpg);"]
+        span.project_item_top[style="background-image: url(#{project.photo};"]
           span.item_label
             = project.name
           span.btn.btn_default.btn_round.btn_bordered[data-toggle="tooltip" data-placement="top" data-original-title="підтримай проект"]
@@ -13,4 +13,4 @@
           span.project_item_subtitle
             = project.status
           span.project_item_text
-            = project.short_description
+            = raw project.short_description
