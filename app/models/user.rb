@@ -14,6 +14,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
+  scope :for_map, -> { where.not(coordinates: nil) }
+
   def self.from_omniauth(auth) # rubocop:disable Metrics/MethodLength
     name_split = auth.info.name.split(' ')
     user = User.find_by(email: auth.info.email)

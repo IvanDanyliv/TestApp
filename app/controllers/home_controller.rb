@@ -3,10 +3,15 @@
 class HomeController < ApplicationController
   before_action :more_projexcts, only: %i[index]
 
-  def index
-    @projects = Project.find_status(params[:f_status]).order(id: :asc).first(session[:count_projects])
-  end
+  include Home
 
+  def index
+    @projects = Project.find_status(params[:f_status]).first(session[:count_projects])
+    @users = User.for_map
+    gon.push({
+      coordinates: coordinates
+    })
+  end
   private
 
   def more_projexcts

@@ -2,6 +2,7 @@
   "name": "TestApp",
   "private": true,
   "dependencies": {
+    "@googlemaps/markerclustererplus": "^1.2.0",
     "activeadmin_quill_editor": "blocknotes/activeadmin_quill_editor",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.0.0",
