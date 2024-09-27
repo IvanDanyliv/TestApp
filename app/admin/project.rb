@@ -7,7 +7,8 @@ ActiveAdmin.register Project do
                 :project_type, :status, :individual_type, :individual_type_en,
                 :name, :name_en, :title, :title_en, :short_description,
                 :short_description_en, :description, :description_en,
-                :site, :url_facebook, :need_amount, :slug
+                :site, :url_facebook, :need_amount, :slug,
+                video_attributes: [:id, :title]
 
   form do |f|
     f.inputs 'Project' do
@@ -31,6 +32,9 @@ ActiveAdmin.register Project do
       f.input :site
       f.input :url_facebook
       f.input :need_amount
+      f.has_many :video, allow_destroy: false do |u|
+        u.input :title
+      end
       f.submit
     end
   end
@@ -98,6 +102,9 @@ ActiveAdmin.register Project do
       row :site
       row :url_facebook
       row :need_amount
+      row :video, :title do |v|
+        raw (v.video.title)
+      end
     end
     active_admin_comments
   end

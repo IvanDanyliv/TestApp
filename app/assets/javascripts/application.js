@@ -18,3 +18,4 @@
 //= require jquery_ujs
 //= require outdatedbrowser
 //= require activeadmin_quill_editor
+//= require cocoon
